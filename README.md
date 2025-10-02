@@ -458,8 +458,6 @@ System.out.println(s1.toString()); // or just System.out.println(s1);
 **Task**:
 
 1. Refactor `displayInfo()` into a `toString()` method in `Student`.
-2. Move printing to the `main` method (or a `StudentPrinter` utility if you prefer).
-3. (Stretch) Create a `StudentParser` with `Student parse(String csv)` that turns `"S001,20,true"` into a `Student`.
 
 ---
 
