@@ -37,14 +37,14 @@ In Java, OOP is implemented through the use of *classes* and *objects*.
 Consider a simple `Car` class that defines the blueprint for a car object.
 
 ```java
-public class Car {
+class Car {
   // Fields (attributes)
   String make;
   String model;
   int year;
 
   // Methods (behaviors)
-  public void startEngine() {
+  void startEngine() {
     System.out.println("Engine started.");
   }
 }
@@ -78,38 +78,18 @@ classDiagram
 
 In Java, a class is defined using the `class` keyword, followed by the class name, and enclosed in curly braces `{}`. Inside the curly braces, you declare the fields (data) and methods (behavior) that define the class. The `public` keyword means this class is accessible from anywhere. You'll learn about other access modifiers (like `private`, `protected`) later.
 
-**Syntax:**
-
-```java
-public class ClassName {
-  // Fields (instance variables) - data the object holds
-  data_type field1;
-  data_type field2;
-  // ... more fields
-
-  // Methods (member methods) - actions the object can perform
-  return_type method1(parameters) {
-    // method body
-  }
-  return_type method2(parameters) {
-    // method body
-  }
-  // ... more methods
-}
-```
-
 ### Example
 
 Let's define a `Person` class with some attributes and methods.
 
 ```java
-public class Person {
+class Person {
   // Fields
   String name;
   int age;
 
   // Methods
-  public void introduce() {
+  void introduce() {
     System.out.println("Hi, I'm " + name + " and I'm " + age + " years old.");
   }
 }
@@ -226,7 +206,7 @@ Constructors are special methods within a class that are automatically called wh
 **Default Constructor Example:** (This is what the compiler would create implicitly if you don't define any constructors).
 
 ```java
-public class Person {
+class Person {
   String name;
   int age;
 
@@ -238,12 +218,12 @@ public class Person {
 **Parameterized Constructor Example:**
 
 ```java
-public class Person {
+class Person {
   String name;
   int age;
 
   // Parameterized constructor
-  public Person(String personName, int personAge) {
+  Person(String personName, int personAge) {
     name = personName;
     age = personAge;
   }
@@ -268,7 +248,7 @@ classDiagram
 Using the `Person` class with constructors.
 
 ```java
-public class Main {
+public lass Main {
   public static void main(String[] args) {
     // Using default constructor (implicitly created by compiler, if you define no other constructors)
     Person person1 = new Person(); // This implicitly calls the parameterless constructor.
@@ -323,11 +303,11 @@ The `this` keyword is a reference to the current object instance. It's primarily
 **Example Usage (Scenario 1):**
 
 ```java
-public class Person {
+class Person {
   String name;
   int age;
 
-  public Person(String name, int age) {
+  Person(String name, int age) {
     this.name = name; // 'this.name' refers to the class field; 'name' refers to the constructor parameter
     this.age = age;
   }
@@ -337,16 +317,16 @@ public class Person {
 **Example Usage (Scenario 2): Constructor Chaining**
 
 ```java
-public class Person {
+class Person {
   String name;
   int age;
   String city;
 
-  public Person(String name, int age) {
+  Person(String name, int age) {
     this(name, age, "Unknown"); // calls the constructor below
   }
 
-  public Person(String name, int age, String city) {
+  Person(String name, int age, String city) {
     this.name = name;
     this.age = age;
     this.city = city;
@@ -367,24 +347,24 @@ sequenceDiagram
 ### Example in `Student`
 
 ```java
-public class Student {
+class Student {
   String studentID;
   int age;
   boolean isRegistered;
 
   // Default constructor using this() to call parameterized constructor
-  public Student() {
+  Student() {
     this("N/A", 0, false);
   }
 
   // Parameterized constructor using 'this'
-  public Student(String studentID, int age, boolean isRegistered) {
+  Student(String studentID, int age, boolean isRegistered) {
     this.studentID = studentID;
     this.age = age;
     this.isRegistered = isRegistered;
   }
 
-  public void displayInfo() {
+  void displayInfo() {
     System.out.println("Student ID: " + this.studentID);
     System.out.println("Age: " + this.age);
     System.out.println("Registered: " + this.isRegistered);
@@ -432,7 +412,7 @@ System.out.println(s1.equals(s3)); // false unless equals() is overridden
 ### Overriding `equals()` and `hashCode()`
 
 ```java
-public class Student {
+class Student {
   String studentID;
   int age;
   boolean isRegistered;
@@ -440,7 +420,7 @@ public class Student {
   // constructors omitted for brevity
 
   @Override
-  public boolean equals(Object o) {
+  boolean equals(Object o) {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Student other = (Student) o;
@@ -448,7 +428,7 @@ public class Student {
   }
 
   @Override
-  public int hashCode() {
+  int hashCode() {
     return studentID == null ? 0 : studentID.hashCode();
   }
 }
@@ -486,7 +466,7 @@ public class Student {
 ### Example
 
 ```java
-public class Student {
+class Student {
   String studentID;
   int age;
   boolean isRegistered;
@@ -544,4 +524,4 @@ This lab introduced fundamental object-oriented programming concepts in Java. Yo
 
 ---
 
-**Congratulations!** You've completed the lab. Next steps: explore inheritance, polymorphism, and interfaces. Happy coding!
+**Congratulations!** You've completed the lab.
