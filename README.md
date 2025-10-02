@@ -32,36 +32,6 @@ In Java, OOP is implemented through the use of *classes* and *objects*.
 
 * **Objects:** Objects are the concrete instances of a class. They are the actual things created based on the class's blueprint. An object holds specific values for the fields defined in its class and can execute the methods defined in that class. For example, you could have a `Car` class as a blueprint, and then create many different `Car` *objects*, each representing a specific car with its own make, model, and year.
 
-### Example
-
-Consider a simple `Car` class that defines the blueprint for a car object.
-
-```java
-class Car {
-  // Fields (attributes)
-  String make;
-  String model;
-  int year;
-
-  // Methods (behaviors)
-  void startEngine() {
-    System.out.println("Engine started.");
-  }
-}
-```
-
-### UML Diagram for Car class
-
-```mermaid
-classDiagram
-  class Car {
-    - String make
-    - String model
-    - int year
-    + startEngine()
-  }
-```
-
 ### DIY Coding Task
 
 **Objective**: Think about real-world objects and how they can be represented as classes in Java. Consider attributes (what describes the object) and behaviors (what the object can do).
